@@ -63,3 +63,12 @@ function philosophy_button2( $attributes, $content='' ) {
 }
 
 add_shortcode( 'button2', 'philosophy_button2' );
+
+
+/**
+ * Uppercase shortcode
+ */
+function philosophy_uppercase($attributes, $content=''){
+    return strtoupper(do_shortcode($content));
+}
+add_shortcode('uc','philosophy_uppercase');
