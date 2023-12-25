@@ -39,3 +39,27 @@
 }
 
 add_shortcode( 'button', 'philosophy_button' );
+
+
+
+/**
+ * Basic secound Button shortcode 
+ */
+function philosophy_button2( $attributes, $content='' ) {
+    $default = array(
+        'type'=>'primary',
+        'title'=>__("Button",'philosophy'),
+        'url'=>'',
+    );
+
+    $button_attributes = shortcode_atts($default,$attributes);
+
+
+    return sprintf( '<a target="_blank" class="btn btn--%s full-width" href="%s">%s</a>',
+        $button_attributes['type'],
+        $button_attributes['url'],
+        do_shortcode($content)
+    );
+}
+
+add_shortcode( 'button2', 'philosophy_button2' );
